@@ -12,10 +12,11 @@ public class xml {
             Properties prop = new Properties();
             reader = new FileInputStream(".\\src\\configuracionxml.xml");
 
-            prop.load(reader);
-            reader.close();
+            prop.loadFromXML(reader);
             String nombre = prop.getProperty("nombre");
             System.out.println(nombre);
+            reader.close();
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
